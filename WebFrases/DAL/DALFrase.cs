@@ -12,7 +12,7 @@ namespace WebFrases.DAL
     {
         Conexao con = new Conexao();
 
-        public void Inserir(Frase frase)
+        public void Inserir(ModeloFrase frase)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace WebFrases.DAL
             }
         }
 
-        public void Alterar(Frase frase)
+        public void Alterar(ModeloFrase frase)
         {
             try
             {
@@ -121,7 +121,7 @@ namespace WebFrases.DAL
             }
         }
 
-        public Frase ObterPorId(int id)
+        public ModeloFrase ObterPorId(int id)
         {
             try
             {
@@ -133,7 +133,7 @@ namespace WebFrases.DAL
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                Frase frase = new Frase();
+                ModeloFrase frase = new ModeloFrase();
 
                 if (dr.HasRows)
                 {

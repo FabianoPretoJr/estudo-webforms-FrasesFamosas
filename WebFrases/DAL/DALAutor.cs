@@ -9,7 +9,7 @@ namespace WebFrases.DAL
     {
         Conexao con = new Conexao();
 
-        public void Inserir(Autor autor)
+        public void Inserir(ModeloAutor autor)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace WebFrases.DAL
             }
         }
 
-        public void Alterar(Autor autor)
+        public void Alterar(ModeloAutor autor)
         {
             try
             {
@@ -116,7 +116,7 @@ namespace WebFrases.DAL
             }
         }
 
-        public Autor ObterPorId(int id)
+        public ModeloAutor ObterPorId(int id)
         {
             try
             {
@@ -128,7 +128,7 @@ namespace WebFrases.DAL
 
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                Autor autor = new Autor();
+                ModeloAutor autor = new ModeloAutor();
 
                 if (dr.HasRows)
                 {

@@ -9,7 +9,7 @@ namespace WebFrases.DAL
     {
         Conexao con = new Conexao();
 
-        public void Inserir(Categoria categoria)
+        public void Inserir(ModeloCategoria categoria)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace WebFrases.DAL
             }
         }
 
-        public void Alterar(Categoria categoria)
+        public void Alterar(ModeloCategoria categoria)
         {
             try
             {
@@ -114,7 +114,7 @@ namespace WebFrases.DAL
             }
         }
 
-        public Categoria ObterPorId(int id)
+        public ModeloCategoria ObterPorId(int id)
         {
             try
             {
@@ -125,8 +125,8 @@ namespace WebFrases.DAL
                 cmd.Parameters.AddWithValue("@id", id);
 
                 SqlDataReader dr = cmd.ExecuteReader();
-                
-                Categoria categoria = new Categoria();
+
+                ModeloCategoria categoria = new ModeloCategoria();
 
                 if(dr.HasRows)
                 {

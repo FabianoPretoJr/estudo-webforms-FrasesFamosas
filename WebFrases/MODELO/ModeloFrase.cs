@@ -1,6 +1,6 @@
 ﻿namespace WebFrases.MODELO
 {
-    public class Frase
+    public class ModeloFrase
     {
         public int Id { get; set; }
         public string Texto { get; set; }
