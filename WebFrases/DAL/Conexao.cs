@@ -11,7 +11,7 @@ namespace WebFrases.DAL
         public Conexao()
         {
             con = new SqlConnection();
-            con.ConnectionString = @"Data Source=BRPC003855\.;
+            con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;
                                      Initial Catalog=sisfrases;
                                      Integrated Security=true";
         }
