@@ -15,8 +15,7 @@ namespace WebFrases
         {
             this.AtualizarGrid();
         }
-
-        public void AtualizarGrid()
+        private void AtualizarGrid()
         {
             DALCategoria categoriaDAL = new DALCategoria();
             gvDados.DataSource = categoriaDAL.Listar();
@@ -28,7 +27,6 @@ namespace WebFrases
             txtNome.Text = "";
             btnSalvar.Text = "Inserir";
         }
-
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -58,12 +56,10 @@ namespace WebFrases
                 Response.Write("ERRO: " + ex.Message);
             }
         }
-
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             this.LimparCampos();
         }
-
         protected void gvDados_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int index = Convert.ToInt32(e.RowIndex);
@@ -72,8 +68,8 @@ namespace WebFrases
             DALCategoria categoriaDAL = new DALCategoria();
             categoriaDAL.Excluir(cod);
             this.AtualizarGrid();
+            this.LimparCampos();
         }
-
         protected void gvDados_SelectedIndexChanged(object sender, EventArgs e)
         {
             try

@@ -1,15 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMestre.Master" AutoEventWireup="true" CodeBehind="Categoria.aspx.cs" Inherits="WebFrases.Categoria" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMestre.Master" AutoEventWireup="true" CodeBehind="Autor.aspx.cs" Inherits="WebFrases.Autor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Panel ID="Panel1" runat="server" GroupingText="Cadastro/Alterações de Categorias">
+    <asp:Panel ID="Panel1" runat="server" GroupingText="Cadastro/Alterações de Autor">
         <asp:Label ID="Label1" runat="server" Text="ID: "></asp:Label>
         <br />
         <asp:TextBox ID="txtId" runat="server" Enabled="false"></asp:TextBox>
         <br />
         <br />
-        <asp:Label ID="Label2" runat="server" Text="Nome da Categoria: "></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="Nome do Autor: "></asp:Label>
         <br />
         <asp:TextBox ID="txtNome" runat="server" Width="570px"></asp:TextBox>
         <br />
@@ -18,12 +17,12 @@
         <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CausesValidation="False" OnClick="btnCancelar_Click" />
         <br />
     </asp:Panel>
-    <asp:Panel ID="Panel2" runat="server" GroupingText="Registros das Categorias">
+    <asp:Panel ID="Panel2" runat="server" GroupingText="Registros dos Autores">
         <asp:GridView ID="gvDados" runat="server" AutoGenerateColumns="False" Width="578px" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDeleting="gvDados_RowDeleting" OnSelectedIndexChanged="gvDados_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="Id" />
-                <asp:BoundField DataField="categoria" HeaderText="Nome" />
+                <asp:BoundField DataField="nome" HeaderText="Nome" />
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:CommandField ShowDeleteButton="True" />
             </Columns>
