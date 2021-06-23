@@ -11,7 +11,11 @@ namespace WebFrases
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["email"] != null)
+            {
+                lblNome.Text = Session["nome"].ToString();
+                lblEmail.Text = Session["email"].ToString();
+            }
         }
     }
 }

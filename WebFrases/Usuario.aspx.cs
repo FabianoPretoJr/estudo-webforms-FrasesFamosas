@@ -56,6 +56,7 @@ namespace WebFrases
                     {
                         usuarioDAL.Inserir(usuario);
                         msg = $"<script>alert('Inserido com sucesso! Código do registro gerado: {usuario.Id}');</script>";
+                        this.AtualizarGrid();
                     }
                     else
                         msg = $"<script>alert('E-mail já existente na base de dados!');</script>";
@@ -67,13 +68,13 @@ namespace WebFrases
                     {                      
                         usuarioDAL.Alterar(usuario);
                         msg = $"<script>alert('Alterado com sucesso! Código do registro alterado: {usuario.Id}');</script>";
+                        this.AtualizarGrid();
                     }
                     else
                         msg = $"<script>alert('E-mail já existente na base de dados!');</script>";
                 }
 
-                Response.Write(msg);
-                this.AtualizarGrid();
+                Response.Write(msg);               
                 this.LimparCampos();
             }
             catch (Exception ex)

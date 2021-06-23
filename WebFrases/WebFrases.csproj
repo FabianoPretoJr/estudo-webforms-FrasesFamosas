@@ -71,7 +71,9 @@
     <Content Include="Categoria.aspx" />
     <Content Include="CSS\Estilos.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Frase.aspx" />
     <Content Include="IMAGENS\SISTEMA\topocurso.png" />
+    <Content Include="Login.aspx" />
     <Content Include="Usuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -101,6 +103,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frase.aspx.cs">
+      <DependentUpon>Frase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Frase.aspx.designer.cs">
+      <DependentUpon>Frase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MODELO\ModeloAutor.cs" />
     <Compile Include="MODELO\ModeloCategoria.cs" />

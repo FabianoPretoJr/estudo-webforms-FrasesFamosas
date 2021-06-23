@@ -88,7 +88,12 @@ namespace WebFrases.DAL
             try
             {
                 DataTable tabela = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(@"SELECT * FROM Frases;", con.Conectar());
+                SqlDataAdapter da = new SqlDataAdapter(@"SELECT f.*, a.nome as 'nome autor', c.categoria as 'nome categoria' 
+                                                         FROM Frases f
+                                                             INNER JOIN Autores a
+	                                                             ON  f.autor = a.id
+                                                             INNER JOIN Categorias c
+	                                                             ON f.categoria = c.id;", con.Conectar());
                 da.Fill(tabela);
                 return tabela;
             }

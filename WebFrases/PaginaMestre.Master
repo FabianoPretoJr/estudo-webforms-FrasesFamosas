@@ -20,7 +20,7 @@
                 <asp:HyperLink ID="hlAutor" runat="server" CssClass="linkBotoes" NavigateUrl="~/Autor.aspx">Autores</asp:HyperLink>
                 <asp:HyperLink ID="hlFrases" runat="server" CssClass="linkBotoes" NavigateUrl="~/Frase.aspx">Frases</asp:HyperLink>
                 <asp:HyperLink ID="hlCategoria" runat="server" CssClass="linkBotoes" NavigateUrl="~/Categoria.aspx">Categorias</asp:HyperLink>
-                <asp:HyperLink ID="hlSair" runat="server" CssClass="linkBotoes" NavigateUrl="#">Sair</asp:HyperLink>
+                <asp:HyperLink ID="hlSair" runat="server" CssClass="linkBotoes" NavigateUrl="~/Login.aspx">Sair</asp:HyperLink>
             </nav>
         </header>
         <main>
@@ -30,7 +30,7 @@
             </div>
         </main>
         <footer>
-            <p>back-end Frases famosas - Site voltado para o administrador do sistema</p>
+            <p>Back-end Frases Famosas - Site voltado para o administrador do sistema</p>
             <p>Site desenvolvido por <a href="https://github.com/FabianoPretoJr" target="_blank">Fabiano Preto Junior</a></p>
         </footer>
     </form>
