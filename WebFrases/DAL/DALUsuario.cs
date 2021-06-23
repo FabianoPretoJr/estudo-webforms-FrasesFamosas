@@ -153,5 +153,41 @@ namespace WebFrases.DAL
                 con.Desconectar();
             }
         }
+
+        public ModeloUsuario ObterPorEmail(string email)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con.Conectar();
+
+                cmd.CommandText = @"SELECT * FROM Usuarios WHERE Email = @email;";
+                cmd.Parameters.AddWithValue("@email", email);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                ModeloUsuario usuario = new ModeloUsuario();
+
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    usuario.Id = Convert.ToInt32(dr["Id"]);
+                    usuario.Nome = dr["Nome"].ToString();
+                    usuario.Email = dr["Email"].ToString();
+                    usuario.Senha = dr["Senha"].ToString();
+                    dr.Close();
+                }
+
+                return usuario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                con.Desconectar();
+            }
+        }
     }
 }

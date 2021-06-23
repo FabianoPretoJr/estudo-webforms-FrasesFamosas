@@ -21,12 +21,14 @@ namespace WebFrases
             gvDados.DataSource = categoriaDAL.Listar();
             gvDados.DataBind();
         }
+
         private void LimparCampos()
         {
             txtId.Text = "";
             txtNome.Text = "";
             btnSalvar.Text = "Inserir";
         }
+
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             try
@@ -60,6 +62,7 @@ namespace WebFrases
         {
             this.LimparCampos();
         }
+
         protected void gvDados_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int index = Convert.ToInt32(e.RowIndex);
@@ -70,6 +73,7 @@ namespace WebFrases
             this.AtualizarGrid();
             this.LimparCampos();
         }
+
         protected void gvDados_SelectedIndexChanged(object sender, EventArgs e)
         {
             try

@@ -11,7 +11,7 @@ namespace WebFrases
 {
 
 
-    public partial class Autor
+    public partial class Usuario
     {
 
         /// <summary>
@@ -69,13 +69,31 @@ namespace WebFrases
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// FileUpload1 control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
+
+        /// <summary>
+        /// txtSenha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSenha;
 
         /// <summary>
         /// btnSalvar control.

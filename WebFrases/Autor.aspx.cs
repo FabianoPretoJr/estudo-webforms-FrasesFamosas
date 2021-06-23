@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -35,9 +36,17 @@ namespace WebFrases
         protected void gvDados_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int index = Convert.ToInt32(e.RowIndex);
-            int cod = Convert.ToInt32(gvDados.Rows[index].Cells[0].Text);
+            int cod = Convert.ToInt32(gvDados.Rows[index].Cells[0].Text);           
 
             DALAutor autorDAL = new DALAutor();
+            ModeloAutor autorBanco = autorDAL.ObterPorId(cod);
+
+            if (autorBanco.Foto != "")
+            {
+                string path = Server.MapPath(@"IMAGENS\AUTORES\");
+                File.Delete(path + autorBanco.Foto);
+            }
+
             autorDAL.Excluir(cod);
             this.AtualizarGrid();
             this.LimparCampos();
@@ -69,9 +78,18 @@ namespace WebFrases
             {
                 DALAutor autorDAL = new DALAutor();
                 ModeloAutor autor = new ModeloAutor();
+                string path = Server.MapPath(@"IMAGENS\AUTORES\");
                 string msg = "";
                 autor.Nome = txtNome.Text;
                 autor.Foto = "";
+
+                if(FileUpload1.PostedFile.FileName != "")
+                {
+                    autor.Foto = DateTime.Now.Millisecond.ToString() + FileUpload1.PostedFile.FileName;
+                    string img = path + autor.Foto;
+                    FileUpload1.PostedFile.SaveAs(img);
+                }
+
                 if (btnSalvar.Text == "Inserir")
                 {
                     autorDAL.Inserir(autor);
@@ -80,6 +98,11 @@ namespace WebFrases
                 else
                 {
                     autor.Id = Convert.ToInt32(txtId.Text);
+
+                    ModeloAutor autorBanco = autorDAL.ObterPorId(autor.Id);
+                    if (autorBanco.Foto != "")
+                        File.Delete(path + autorBanco.Foto);
+
                     autorDAL.Alterar(autor);
                     msg = $"<script>alert('Alterado com sucesso! Código do registro alterado: {autor.Id}');</script>";
                 }
