@@ -73,6 +73,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Frase.aspx" />
     <Content Include="IMAGENS\SISTEMA\topocurso.png" />
+    <Content Include="JavaScriptFunctions.js" />
     <Content Include="Login.aspx" />
     <Content Include="Usuario.aspx" />
     <Content Include="Web.config" />

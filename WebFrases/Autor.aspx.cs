@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebFrases.DAL;
@@ -68,7 +65,7 @@ namespace WebFrases
             }
             catch (Exception ex)
             {
-                Response.Write("ERRO: " + ex.Message);
+                PlaceHolder1.Controls.Add(new LiteralControl($"<script>ShowMsg('ERRO', '{ex.Message}');</script>"));
             }
         }
 
@@ -93,7 +90,7 @@ namespace WebFrases
                 if (btnSalvar.Text == "Inserir")
                 {
                     autorDAL.Inserir(autor);
-                    msg = $"<script>alert('Inserido com sucesso! Código do registro gerado: {autor.Id}');</script>";
+                    msg = $"<script>ShowMsg('Cadastro de Autor', 'Inserido com sucesso! Código do registro gerado: {autor.Id}');</script>";
                 }
                 else
                 {
@@ -104,16 +101,16 @@ namespace WebFrases
                         File.Delete(path + autorBanco.Foto);
 
                     autorDAL.Alterar(autor);
-                    msg = $"<script>alert('Alterado com sucesso! Código do registro alterado: {autor.Id}');</script>";
+                    msg = $"<script>ShowMsg('Alteração de Autor', 'Alterado com sucesso! Código do registro alterado: {autor.Id}');</script>";
                 }
 
-                Response.Write(msg);
+                PlaceHolder1.Controls.Add(new LiteralControl(msg));
                 this.AtualizarGrid();
                 this.LimparCampos();
             }
             catch (Exception ex)
             {
-                Response.Write("ERRO: " + ex.Message);
+                PlaceHolder1.Controls.Add(new LiteralControl($"<script>ShowMsg('ERRO', '{ex.Message}');</script>"));
             }
         }
     }

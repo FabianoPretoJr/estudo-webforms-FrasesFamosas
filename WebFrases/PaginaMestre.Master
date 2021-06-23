@@ -8,6 +8,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" href="CSS/Estilos.css" />
+    <script type="text/javascript" src="JavaScriptFunctions.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -25,6 +26,10 @@
         </header>
         <main>
             <div>
+                <div id="cxFloatMsg" class="cxFloatMsg" onclick="HideMsg()">
+                    <h2 id="msgTitulo">O título irá aparacer aqui</h2>
+                    <p id="msgTexto">A mensagem irá aparecer aqui</p>
+                </div>
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
